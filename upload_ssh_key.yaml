@@ -1,0 +1,11 @@
+---
+- hosts: WINHOST
+  remote_user: WindowsUsername
+  tasks:
+          # upload ssh key                
+          - authorized_key:
+                  user: WindowsUsername
+                  state: present
+                  manage_dir: yes
+                  key: "{{ lookup('file', '/path/to/your/www_id_rsa.pub') }}"
+...

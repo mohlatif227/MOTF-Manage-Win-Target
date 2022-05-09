@@ -1,0 +1,8 @@
+---
+- hosts: WINHOST
+  tasks:
+    - name : Install Win32-OpenSSH Service
+      win_chocolatey:
+        name: openssh
+        package_params: /SSHServerFeature
+        state: present

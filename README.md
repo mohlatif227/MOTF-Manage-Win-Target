@@ -13,3 +13,5 @@ Ansible uses the `pywinrm` package to communicate with Windows servers over WinR
 
 `pip install "pywinrm>=0.3.0"`
 
+## Configure ansible inventory file
+

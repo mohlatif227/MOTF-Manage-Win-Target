@@ -1,0 +1,8 @@
+[WINHOST]
+AppServer01 ansible_host=<IP>
+
+[WINHOST:vars]
+ansible_user: WindowsUsername
+ansible_password: Password
+ansible_connection: winrm
+ansible_winrm_transport: basic
