@@ -29,6 +29,7 @@ With most versions of Windows, WinRM ships in the box but isn’t turned on by d
 * Also, the WinRM connection plugin defaults to communicating via https, but it supports different modes like message-encrypted http. Since the “Configure Remoting for Ansible” script we ran earlier set things up with the self-signed cert, we need to tell Python, “Don’t try to validate this certificate because it’s not going to be from a valid CA.” So in order to prevent an error, one more thing you need to put into the host vars section  is: `ansible_winrm_server_cert_validation=ignore` in your Inventory File.
 
 Here is the example of Inventory file for Windows Host
+
 ```
 [win]
 AppServer01 ansible_host=<IP>
@@ -48,18 +49,21 @@ Now we have done all the configuration between Ansible Control Host and Windows 
 `ansible <host_group_name_in_inventory_file> -i <inventory_file_name> -m win_ping`
 
 As per our Inventory file, the command would look like as below:
+
 `ansible win -i inventory -m win_ping`
 
 If everything is configured correctly, we should get the ping response as SUCCESS.
 
 ## Running Ansible Playbook
 In order to run the ansible playbook, go to your Ansible Control Host and run the `ansible-playboook` command as below:
+
 `ansible-playbook -i <inventory_file_name> <playbook_file_name>`
 
-to run `install_chocolaty.yaml` ansible playbook, run the below command.
+to run `install_chocolaty.yaml` ansible playbook, run the below command:
+
 `ansible-playbook -i inventory install_chocolaty.yaml`
 
 
-##Pending Task
+## Pending Task
 Out of 4 tasks which was assigned to me to complete, I was not able to figure it out how to setup/configure ssh port configuration on Windows Managed host using Ansible playbook. I've always worked on Linux enviroment and I've never got opportunity to manage Windows host using Ansible, hence I couldn't find solution for that partcular task.
 
