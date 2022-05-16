@@ -1,5 +1,5 @@
 ---
-- hosts: WINHOST
+- hosts: win
   remote_user: WindowsUsername
   tasks:
           # upload ssh key                

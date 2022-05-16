@@ -1,5 +1,5 @@
 ---
-- hosts: WINHOST
+- hosts: win
   tasks:
     - name : Install Win32-OpenSSH Service
       win_chocolatey:
